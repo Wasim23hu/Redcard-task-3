@@ -6,6 +6,39 @@
     <title>Submission - Red Card Awards</title>
     <!-- External CSS Link -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Exact layout specifications matching the provided reference image */
+        .right-form-cell .form-group input, 
+        .right-form-cell .form-group textarea {
+            background-color: transparent !important;
+            border: 1px solid #ffffff !important;
+            color: #ffffff !important;
+        }
+        .right-form-cell .form-group input::placeholder, 
+        .right-form-cell .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+        .checkbox-container {
+            color: #ffffff !important;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        .checkbox-container input {
+            margin-right: 8px;
+        }
+        /* Submit Button Default State */
+        .submit-status-bar {
+            background-color: #ffffff !important;
+            color: #000000 !important;
+            font-weight: bold !important;
+            border: none !important;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+    </style>
 </head>
 <body>
 
@@ -22,7 +55,6 @@
                 <p class="deadline-text">Applications will close on the 15th December 2017</p>
             </div>
 
-            <!-- ID add ki taake JavaScript form submission ko detect kar sake -->
             <form class="right-form-cell" id="awardForm">
                 <div class="form-group">
                     <input type="text" class="input-field" placeholder="Name" required>
@@ -37,6 +69,7 @@
                 <h3 class="award-heading">Which Award</h3>
                 <p class="award-subtext">(Please tick and provide details for all of the awards you would like to be nominated for)</p>
 
+                <!-- 1. Best Livestream -->
                 <label class="checkbox-container">
                     <input type="checkbox" checked> Best Livestream
                 </label>
@@ -44,6 +77,7 @@
                     <textarea class="textarea-field" placeholder="Description & Results (max. 150 words)"></textarea>
                 </div>
 
+                <!-- 2. Best Tour Campaign -->
                 <label class="checkbox-container">
                     <input type="checkbox"> Best Tour Campaign
                 </label>
@@ -51,6 +85,7 @@
                     <textarea class="textarea-field" placeholder="Description & Results (max. 150 words)"></textarea>
                 </div>
 
+                <!-- 3. Best Sponsor Activation -->
                 <label class="checkbox-container">
                     <input type="checkbox"> Best Sponsor Activation
                 </label>
@@ -58,28 +93,41 @@
                     <textarea class="textarea-field" placeholder="Description & Results (max. 150 words)"></textarea>
                 </div>
 
-                <!-- Pehle sirf Submit likha aayega aur ID add ki hai -->
+                <!-- 4. Best Use of Technology (Naya Added) -->
+                <label class="checkbox-container">
+                    <input type="checkbox"> Best Use of Technology
+                </label>
+                <div class="form-group">
+                    <textarea class="textarea-field" placeholder="Description & Results (max. 150 words)"></textarea>
+                </div>
+
+                <!-- 5. Best Online Campaign (Naya Added) -->
+                <label class="checkbox-container">
+                    <input type="checkbox"> Best Online Campaign
+                </label>
+                <div class="form-group">
+                    <textarea class="textarea-field" placeholder="Description & Results (max. 150 words)"></textarea>
+                </div>
+
+                <!-- Pehle White color me Submit application text dikhega -->
                 <button type="submit" class="submit-status-bar" id="submitBtn">Submit Application</button>
             </form>
 
         </div>
     </div>
 
-    <!-- JavaScript code jo submission handle karega -->
+    <!-- JavaScript code jo click par text change karega -->
     <script>
         document.getElementById('awardForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Page ko automatic reload hone se rokne ke liye
+            event.preventDefault(); // Page reload hone se rokne ke liye
             
             var btn = document.getElementById('submitBtn');
             
-            // Button ka text aur style change karne ke liye
+            // Click karne par text image jaisa ho jayega
             btn.innerHTML = "✓ Submission Successful";
-            btn.style.backgroundColor = "#27ae60"; // Green color successful state ke liye
-            btn.style.color = "#ffffff";
-            btn.disabled = true; // Taake baar baar click na ho
-            
-            // Agar aap form ko reset karna chahein to yeh line use kar sakte hain:
-            // this.reset();
+            btn.style.backgroundColor = "#ffffff"; 
+            btn.style.color = "#000000";
+            btn.disabled = true; 
         });
     </script>
 
