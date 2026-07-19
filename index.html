@@ -6,13 +6,191 @@
     <title>Red Card 2018 - China Digital Football Awards</title>
     <!-- External CSS Link -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Base Reset */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            font-family: sans-serif;
+        }
+
+        /* 1. Header Banner - Bottom-Right Cut Only */
+        .header-banner {
+            background-color: #8B262A !important;
+            color: #ffffff;
+            padding: 50px 8% 100px 8% !important;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 80px), calc(100% - 80px) 100%, 0 100%) !important;
+        }
+
+        .header-banner::after, .header-banner::before {
+            display: none !important;
+        }
+
+        .logo-container {
+            margin-bottom: 20px;
+        }
+
+        .main-avatar {
+            height: 70px;
+            display: block;
+        }
+
+        .header-banner h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin: 10px 0 5px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header-banner h2 {
+            font-size: 1.4rem;
+            color: #000000;
+            margin: 0 0 30px 0;
+            font-weight: bold;
+        }
+
+        .header-banner p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            max-width: 900px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Go To Submission Form Button */
+        .form-link-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 14px 30px;
+            background-color: #ffffff !important;
+            color: #000000 !important;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            border-radius: 0px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+        
+        .form-link-btn:hover {
+            background-color: #000000 !important;
+            color: #ffffff !important;
+        }
+
+        /* Grid Content Area */
+        .main-content {
+            padding: 40px 8%;
+        }
+
+        .category-section {
+            margin-bottom: 40px;
+        }
+
+        /* Clean Triangle Arrow */
+        .category-title {
+            font-size: 1.3rem;
+            color: #000000;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
+
+        .category-title::before {
+            content: '';
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            border-left: 10px solid #8B262A;
+            margin-right: 12px;
+        }
+
+        .clubs-grid {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .grid-column {
+            width: 15%;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .club-logo-wrapper img {
+            height: 65px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .club-info p {
+            margin: 2px 0;
+            font-size: 0.75rem;
+        }
+
+        .lorem-red {
+            color: #8B262A;
+        }
+
+        .lorem-bold {
+            font-weight: bold;
+            color: #333333;
+        }
+
+        /* 2. Footer Banner - TOP-LEFT CUT FIXED */
+        .footer-banner {
+            background-color: #8B262A !important;
+            color: #ffffff;
+            padding: 60px 8% 60px 8% !important;
+            margin-top: 50px;
+            position: relative;
+            clip-path: polygon(80px 0, 100% 0, 100% 100%, 0 100%) !important;
+        }
+
+        .footer-banner::after, .footer-banner::before {
+            display: none !important;
+        }
+
+        .footer-banner h2 {
+            font-size: 1.8rem;
+            font-weight: 900;
+            line-height: 1.4;
+            max-width: 600px;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 768px) {
+            .clubs-grid {
+                justify-content: center;
+            }
+            .grid-column {
+                width: 28%;
+            }
+            .header-banner h1 {
+                font-size: 2.2rem;
+            }
+            .footer-banner h2 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <!-- Header Block -->
     <header class="header-banner">
         <div class="logo-container">
-            <!-- Yahan path badal diya -->
             <img src="Images/logo.png" alt="Red Card Logo" class="main-avatar">
         </div>
         <h1>Red Card 2018</h1>
@@ -92,5 +270,5 @@
     </footer>
 
 </body>
-    </html>
-                                                                            
+                                                                                                                                                                                                              </html>
+                                                                                                                                                                                                              
