@@ -15,7 +15,7 @@
             font-family: sans-serif;
         }
 
-        /* 1. Header Banner - Bottom-Right Cut Only */
+        /* 1. Header Banner - Bottom-Right Cut */
         .header-banner {
             background-color: #8B262A !important;
             color: #ffffff;
@@ -146,14 +146,15 @@
             color: #333333;
         }
 
-        /* 2. Footer Banner - TOP-LEFT CUT FIXED */
+        /* 2. Footer Banner - Bottom-Right Cut (Yellow Arrow ke mutabiq fixed) */
         .footer-banner {
             background-color: #8B262A !important;
             color: #ffffff;
-            padding: 60px 8% 60px 8% !important;
+            padding: 60px 8% 100px 8% !important;
             margin-top: 50px;
             position: relative;
-            clip-path: polygon(80px 0, 100% 0, 100% 100%, 0 100%) !important;
+            /* Is line se footer ka cut bilkul header ki tarah right-bottom ho gaya hai */
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 80px), calc(100% - 80px) 100%, 0 100%) !important;
         }
 
         .footer-banner::after, .footer-banner::before {
@@ -270,5 +271,4 @@
     </footer>
 
 </body>
-                                                                                                                                                                                                              </html>
-                                                                                                                                                                                                              
+</html>
