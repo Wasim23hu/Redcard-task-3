@@ -6,37 +6,186 @@
     <title>Submission - Red Card Awards</title>
     <!-- External CSS Link -->
     <link rel="stylesheet" href="style.css">
+    
     <style>
-        /* Exact layout specifications matching the provided reference image */
+        /* Base Overrides for Perfect Alignment */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            font-family: sans-serif;
+        }
+
+        .top-brand-bar {
+            padding: 20px 40px;
+            background-color: #ffffff;
+        }
+
+        .brand-logo {
+            height: 60px;
+            display: block;
+        }
+
+        /* Full layout container matching black-circle reference */
+        .submission-container {
+            background-color: #8B262A; /* Exact Crimson Maroon Tone */
+            min-height: calc(100vh - 100px);
+            padding: 60px 8%;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Cut-out effect layout dynamic edge */
+        .submission-container::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 0 60px 60px;
+            border-color: transparent transparent #ffffff transparent;
+        }
+
+        /* Flex row for side by side placement */
+        .split-layout-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 10%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Left Content Column Styling */
+        .left-content-cell {
+            flex: 1;
+            color: #ffffff;
+            margin-top: 40px;
+        }
+
+        .left-content-cell h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            text-transform: none;
+        }
+
+        .left-content-cell p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 450px;
+        }
+
+        .left-content-cell .deadline-text {
+            font-weight: bold;
+            color: #ffffff;
+            margin-top: 30px;
+        }
+
+        /* Right Form Container Alignment */
+        .right-form-cell {
+            flex: 1.2;
+            width: 100%;
+            max-width: 550px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            width: 100%;
+        }
+
         .right-form-cell .form-group input, 
         .right-form-cell .form-group textarea {
+            width: 100%;
+            box-sizing: border-box;
             background-color: transparent !important;
-            border: 1px solid #ffffff !important;
+            border: 1px solid rgba(255, 255, 255, 0.8) !important;
             color: #ffffff !important;
+            padding: 12px 15px;
+            font-size: 0.95rem;
+            border-radius: 0px;
         }
+
+        .right-form-cell .form-group textarea {
+            height: 80px;
+            resize: none;
+        }
+
         .right-form-cell .form-group input::placeholder, 
         .right-form-cell .form-group textarea::placeholder {
             color: rgba(255, 255, 255, 0.7) !important;
         }
+
+        .award-heading {
+            color: #ffffff;
+            font-size: 1.4rem;
+            margin: 25px 0 5px 0;
+            font-weight: bold;
+        }
+
+        .award-subtext {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+        }
+
         .checkbox-container {
             color: #ffffff !important;
             font-weight: bold;
             display: flex;
             align-items: center;
-            margin-top: 15px;
-            margin-bottom: 5px;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            cursor: pointer;
         }
+
         .checkbox-container input {
-            margin-right: 8px;
+            margin-right: 10px;
+            accent-color: #ffffff;
+            width: 16px;
+            height: 16px;
         }
-        /* Submit Button Default State */
+
+        /* Perfect solid white layout action button */
         .submit-status-bar {
             background-color: #ffffff !important;
             color: #000000 !important;
             font-weight: bold !important;
             border: none !important;
+            padding: 16px 0 !important;
+            font-size: 1.05rem !important;
             cursor: pointer;
-            transition: all 0.3s ease;
+            width: 100%;
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            text-transform: none;
+            letter-spacing: 0.5px;
+            transition: background-color 0.2s ease;
+        }
+
+        /* Mobile View Alignment Fallback */
+        @media (max-width: 768px) {
+            .split-layout-row {
+                flex-direction: column;
+                gap: 40px;
+            }
+            .left-content-cell {
+                margin-top: 10px;
+            }
+            .left-content-cell h1 {
+                font-size: 2.8rem;
+            }
         }
     </style>
 </head>
@@ -49,12 +198,14 @@
     <div class="submission-container">
         <div class="split-layout-row">
             
+            <!-- Left Side Details Section -->
             <div class="left-content-cell">
                 <h1>Submission</h1>
                 <p>All details of submissions will be kept strictly private and confidential by Mailman and will not be used for any purpose other than judging Red Card 2018 winners.</p>
                 <p class="deadline-text">Applications will close on the 15th December 2017</p>
             </div>
 
+            <!-- Right Side Form Fields Section -->
             <form class="right-form-cell" id="awardForm">
                 <div class="form-group">
                     <input type="text" class="input-field" placeholder="Name" required>
@@ -93,7 +244,7 @@
                     <textarea class="textarea-field" placeholder="Description & Results (max. 150 words)"></textarea>
                 </div>
 
-                <!-- 4. Best Use of Technology (Naya Added) -->
+                <!-- 4. Best Use of Technology -->
                 <label class="checkbox-container">
                     <input type="checkbox"> Best Use of Technology
                 </label>
@@ -101,7 +252,7 @@
                     <textarea class="textarea-field" placeholder="Description & Results (max. 150 words)"></textarea>
                 </div>
 
-                <!-- 5. Best Online Campaign (Naya Added) -->
+                <!-- 5. Best Online Campaign -->
                 <label class="checkbox-container">
                     <input type="checkbox"> Best Online Campaign
                 </label>
@@ -109,27 +260,12 @@
                     <textarea class="textarea-field" placeholder="Description & Results (max. 150 words)"></textarea>
                 </div>
 
-                <!-- Pehle White color me Submit application text dikhega -->
-                <button type="submit" class="submit-status-bar" id="submitBtn">Submit Application</button>
+                <!-- Solid White Active Layout Button -->
+                <button type="button" class="submit-status-bar">✓ Submission Successful</button>
             </form>
 
         </div>
     </div>
-
-    <!-- JavaScript code jo click par text change karega -->
-    <script>
-        document.getElementById('awardForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Page reload hone se rokne ke liye
-            
-            var btn = document.getElementById('submitBtn');
-            
-            // Click karne par text image jaisa ho jayega
-            btn.innerHTML = "✓ Submission Successful";
-            btn.style.backgroundColor = "#ffffff"; 
-            btn.style.color = "#000000";
-            btn.disabled = true; 
-        });
-    </script>
 
 </body>
 </html>
