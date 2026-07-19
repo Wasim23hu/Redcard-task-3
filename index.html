@@ -15,24 +15,18 @@
             font-family: sans-serif;
         }
 
-        /* 1. Header Banner with Bottom-Right Cut */
+        /* 1. Header Banner - Bottom-Right Cut Only */
         .header-banner {
-            background-color: #8B262A;
+            background-color: #8B262A !important;
             color: #ffffff;
-            padding: 50px 8% 80px 8%;
+            padding: 50px 8% 100px 8% !important;
             position: relative;
+            /* Bottom-right cut logic */
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 80px), calc(100% - 80px) 100%, 0 100%) !important;
         }
 
-        .header-banner::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 0 0 70px 70px;
-            border-color: transparent transparent #ffffff transparent;
+        .header-banner::after, .header-banner::before {
+            display: none !important;
         }
 
         .logo-container {
@@ -82,8 +76,6 @@
             border-radius: 0px;
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
             transition: all 0.3s ease;
-            position: relative;
-            z-index: 5;
         }
         
         .form-link-btn:hover {
@@ -152,26 +144,19 @@
             color: #333333;
         }
 
-        /* 2. Footer Banner with EXACT SAME Bottom-Right Cut */
+        /* 2. Footer Banner - EXACT SAME Bottom-Right Cut Only */
         .footer-banner {
-            background-color: #8B262A;
+            background-color: #8B262A !important;
             color: #ffffff;
-            padding: 60px 8% 90px 8%; /* Bottom padding thodi zyada taake cut text ko na chhede */
-            position: relative;
+            padding: 60px 8% 100px 8% !important; /* text bottom cut se safe rahe isliye bottom padding barhai hai */
             margin-top: 50px;
+            position: relative;
+            /* exact same bottom-right cut logic as header */
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 80px), calc(100% - 80px) 100%, 0 100%) !important;
         }
 
-        /* Isko bhi bilkul header jaisa same bottom-right cut de diya hai */
-        .footer-banner::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 0 0 70px 70px;
-            border-color: transparent transparent #ffffff transparent;
+        .footer-banner::after, .footer-banner::before {
+            display: none !important;
         }
 
         .footer-banner h2 {
@@ -202,7 +187,7 @@
 </head>
 <body>
 
-    <!-- Header Block (Bottom-Right Cut) -->
+    <!-- Header Block -->
     <header class="header-banner">
         <div class="logo-container">
             <img src="logo.png" alt="Red Card Logo" class="main-avatar">
@@ -272,7 +257,7 @@
         </section>
     </main>
 
-    <!-- Footer Block (EXACT SAME Bottom-Right Cut) -->
+    <!-- Footer Block -->
     <footer class="footer-banner">
         <h2>Red Card 2019 Winners and Report to be launched on 24th January 2019.</h2>
     </footer>
