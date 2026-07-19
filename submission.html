@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     
     <style>
-        /* Base Overrides for Perfect Alignment */
+        /* Alignment and Layout styles exactly as your reference image */
         body {
             margin: 0;
             padding: 0;
@@ -26,9 +26,8 @@
             display: block;
         }
 
-        /* Full layout container matching black-circle reference */
         .submission-container {
-            background-color: #8B262A; /* Exact Crimson Maroon Tone */
+            background-color: #8B262A; 
             min-height: calc(100vh - 100px);
             padding: 60px 8%;
             box-sizing: border-box;
@@ -36,7 +35,6 @@
             overflow: hidden;
         }
 
-        /* Cut-out effect layout dynamic edge */
         .submission-container::after {
             content: '';
             position: absolute;
@@ -49,7 +47,6 @@
             border-color: transparent transparent #ffffff transparent;
         }
 
-        /* Flex row for side by side placement */
         .split-layout-row {
             display: flex;
             flex-direction: row;
@@ -60,7 +57,6 @@
             margin: 0 auto;
         }
 
-        /* Left Content Column Styling */
         .left-content-cell {
             flex: 1;
             color: #ffffff;
@@ -72,7 +68,6 @@
             font-weight: 900;
             margin-bottom: 30px;
             letter-spacing: 1px;
-            text-transform: none;
         }
 
         .left-content-cell p {
@@ -89,7 +84,6 @@
             margin-top: 30px;
         }
 
-        /* Right Form Container Alignment */
         .right-form-cell {
             flex: 1.2;
             width: 100%;
@@ -156,7 +150,7 @@
             height: 16px;
         }
 
-        /* Perfect solid white layout action button */
+        /* Solid white action button styling */
         .submit-status-bar {
             background-color: #ffffff !important;
             color: #000000 !important;
@@ -169,12 +163,10 @@
             display: block;
             text-align: center;
             margin-top: 30px;
-            text-transform: none;
             letter-spacing: 0.5px;
             transition: background-color 0.2s ease;
         }
 
-        /* Mobile View Alignment Fallback */
         @media (max-width: 768px) {
             .split-layout-row {
                 flex-direction: column;
@@ -205,8 +197,8 @@
                 <p class="deadline-text">Applications will close on the 15th December 2017</p>
             </div>
 
-            <!-- Right Side Form Fields Section -->
-            <form class="right-form-cell" id="awardForm">
+            <!-- Right Side Form Fields Section (ID added) -->
+            <form class="right-form-cell" id="submissionForm">
                 <div class="form-group">
                     <input type="text" class="input-field" placeholder="Name" required>
                 </div>
@@ -260,12 +252,25 @@
                     <textarea class="textarea-field" placeholder="Description & Results (max. 150 words)"></textarea>
                 </div>
 
-                <!-- Solid White Active Layout Button -->
-                <button type="button" class="submit-status-bar">✓ Submission Successful</button>
+                <!-- type="submit" aur ID add kar di hai taake validation chal sake -->
+                <button type="submit" class="submit-status-bar" id="submitBtn">Submit Application</button>
             </form>
 
         </div>
     </div>
+
+    <!-- JavaScript code jo alignment ko chhede bina functional toggle handle karega -->
+    <script>
+        document.getElementById('submissionForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Page reload hone se rokne ke liye
+            
+            var btn = document.getElementById('submitBtn');
+            
+            // Submit karne par text instant change ho jayega
+            btn.innerHTML = "✓ Submission Successful";
+            btn.disabled = true; // Duplicate entries block karne ke liye
+        });
+    </script>
 
 </body>
 </html>
