@@ -10,7 +10,6 @@
 <body>
 
     <div class="top-brand-bar">
-        <!-- Naya Logo Name -->
         <img src="logo.png" alt="Brand Logo" class="brand-logo">
     </div>
 
@@ -23,7 +22,8 @@
                 <p class="deadline-text">Applications will close on the 15th December 2017</p>
             </div>
 
-            <form class="right-form-cell">
+            <!-- ID add ki taake JavaScript form submission ko detect kar sake -->
+            <form class="right-form-cell" id="awardForm">
                 <div class="form-group">
                     <input type="text" class="input-field" placeholder="Name" required>
                 </div>
@@ -58,11 +58,30 @@
                     <textarea class="textarea-field" placeholder="Description & Results (max. 150 words)"></textarea>
                 </div>
 
-                <button type="submit" class="submit-status-bar">✓ Submission Successful</button>
+                <!-- Pehle sirf Submit likha aayega aur ID add ki hai -->
+                <button type="submit" class="submit-status-bar" id="submitBtn">Submit Application</button>
             </form>
 
         </div>
     </div>
+
+    <!-- JavaScript code jo submission handle karega -->
+    <script>
+        document.getElementById('awardForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Page ko automatic reload hone se rokne ke liye
+            
+            var btn = document.getElementById('submitBtn');
+            
+            // Button ka text aur style change karne ke liye
+            btn.innerHTML = "✓ Submission Successful";
+            btn.style.backgroundColor = "#27ae60"; // Green color successful state ke liye
+            btn.style.color = "#ffffff";
+            btn.disabled = true; // Taake baar baar click na ho
+            
+            // Agar aap form ko reset karna chahein to yeh line use kar sakte hain:
+            // this.reset();
+        });
+    </script>
 
 </body>
 </html>
