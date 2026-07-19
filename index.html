@@ -15,7 +15,7 @@
             font-family: sans-serif;
         }
 
-        /* Header section with exact bottom-right cut shape */
+        /* 1. Header Banner with Bottom-Right Cut */
         .header-banner {
             background-color: #8B262A;
             color: #ffffff;
@@ -23,7 +23,6 @@
             position: relative;
         }
 
-        /* Reference image ke mutabiq exact bottom-right cut template */
         .header-banner::after {
             content: '';
             position: absolute;
@@ -55,7 +54,7 @@
 
         .header-banner h2 {
             font-size: 1.4rem;
-            color: #000000; /* Subtle contrast heading text */
+            color: #000000;
             margin: 0 0 30px 0;
             font-weight: bold;
         }
@@ -68,7 +67,7 @@
             color: rgba(255, 255, 255, 0.9);
         }
 
-        /* Unique Premium Button link styling */
+        /* Go To Submission Form Button */
         .form-link-btn {
             display: inline-block;
             margin-top: 15px;
@@ -84,7 +83,7 @@
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
             transition: all 0.3s ease;
             position: relative;
-            z-index: 5; /* Cutout ke upar click maintain rakhne ke liye */
+            z-index: 5;
         }
         
         .form-link-btn:hover {
@@ -92,7 +91,7 @@
             color: #ffffff !important;
         }
 
-        /* Grid Layout Content Area */
+        /* Grid Content Area */
         .main-content {
             padding: 40px 8%;
         }
@@ -111,7 +110,6 @@
             align-items: center;
         }
 
-        /* Reference red arrow icon helper before heading */
         .category-title::before {
             content: '▲';
             color: #8B262A;
@@ -126,7 +124,6 @@
             flex-direction: row;
             flex-wrap: wrap;
             gap: 30px;
-            justify-content: transform;
         }
 
         .grid-column {
@@ -155,26 +152,26 @@
             color: #333333;
         }
 
-        /* Footer banner layout with exact top-right cut */
+        /* 2. Footer Banner with EXACT SAME Bottom-Right Cut */
         .footer-banner {
             background-color: #8B262A;
             color: #ffffff;
-            padding: 60px 8%;
+            padding: 60px 8% 90px 8%; /* Bottom padding thodi zyada taake cut text ko na chhede */
             position: relative;
             margin-top: 50px;
         }
 
-        /* Targetting ONLY the Top-Right Corner Cut exactly like image 2 */
+        /* Isko bhi bilkul header jaisa same bottom-right cut de diya hai */
         .footer-banner::after {
             content: '';
             position: absolute;
-            top: 0;
+            bottom: 0;
             right: 0;
             width: 0;
             height: 0;
             border-style: solid;
-            border-width: 0 70px 70px 0;
-            border-color: transparent #ffffff transparent transparent;
+            border-width: 0 0 70px 70px;
+            border-color: transparent transparent #ffffff transparent;
         }
 
         .footer-banner h2 {
@@ -187,7 +184,6 @@
             letter-spacing: 0.5px;
         }
 
-        /* Mobile Layout View Alignment responsive setup */
         @media (max-width: 768px) {
             .clubs-grid {
                 justify-content: center;
@@ -206,7 +202,7 @@
 </head>
 <body>
 
-    <!-- Header Block with Bottom Right Angle Cut -->
+    <!-- Header Block (Bottom-Right Cut) -->
     <header class="header-banner">
         <div class="logo-container">
             <img src="logo.png" alt="Red Card Logo" class="main-avatar">
@@ -216,11 +212,10 @@
         <p>The Red Card is globally recognised as the leading annual report to assess the most influential European football clubs, leagues and players online in China. Now in its 7th year, Red Card 2018 has been reimagined to include 5 additional awards to recognise the many areas of digital performance in China, thereby taking the Red Card report to a whole new level. Due to the nature and variety of these new categories, the winners will be chosen by a panel of 6 industry experts, rather than by the traditional metrics used to assess the three headline awards.</p>
         <p>This report aims to educate teams and organisations on how to improve their China digital strategy, what today's Chinese fan wants and what works online in China.</p>
         
-        <!-- Premium Button Link -->
         <a href="submission.html" class="form-link-btn">Go to Submission Form →</a>
     </header>
 
-    <!-- Football Clubs Dynamic Row Grid Showcase -->
+    <!-- Grid Showcase Area -->
     <main class="main-content">
         <!-- Row 1 -->
         <section class="category-section">
@@ -275,36 +270,9 @@
                 </div>
             </div>
         </section>
-
-        <!-- Row 3 -->
-        <section class="category-section">
-            <h3 class="category-title">Best Clubs</h3>
-            <div class="clubs-grid">
-                <div class="grid-column">
-                    <div class="club-logo-wrapper"><img src="1.png" alt="BVB"></div>
-                    <div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div>
-                </div>
-                <div class="grid-column">
-                    <div class="club-logo-wrapper"><img src="2.png" alt="Bundesliga"></div>
-                    <div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div>
-                </div>
-                <div class="grid-column">
-                    <div class="club-logo-wrapper"><img src="3.png" alt="Chelsea"></div>
-                    <div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div>
-                </div>
-                <div class="grid-column">
-                    <div class="club-logo-wrapper"><img src="4.png" alt="PSG"></div>
-                    <div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div>
-                </div>
-                <div class="grid-column">
-                    <div class="club-logo-wrapper"><img src="5.png" alt="Arsenal"></div>
-                    <div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <!-- Footer Block with Top Right Angle Cut ONLY -->
+    <!-- Footer Block (EXACT SAME Bottom-Right Cut) -->
     <footer class="footer-banner">
         <h2>Red Card 2019 Winners and Report to be launched on 24th January 2019.</h2>
     </footer>
