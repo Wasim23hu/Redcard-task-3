@@ -7,46 +7,220 @@
     <!-- External CSS Link -->
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Unique & Premium Button Styling */
+        /* Base Reset */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            font-family: sans-serif;
+        }
+
+        /* Header section with exact bottom-right cut shape */
+        .header-banner {
+            background-color: #8B262A;
+            color: #ffffff;
+            padding: 50px 8% 80px 8%;
+            position: relative;
+        }
+
+        /* Reference image ke mutabiq exact bottom-right cut template */
+        .header-banner::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 0 70px 70px;
+            border-color: transparent transparent #ffffff transparent;
+        }
+
+        .logo-container {
+            margin-bottom: 20px;
+        }
+
+        .main-avatar {
+            height: 70px;
+            display: block;
+        }
+
+        .header-banner h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin: 10px 0 5px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header-banner h2 {
+            font-size: 1.4rem;
+            color: #000000; /* Subtle contrast heading text */
+            margin: 0 0 30px 0;
+            font-weight: bold;
+        }
+
+        .header-banner p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            max-width: 900px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Unique Premium Button link styling */
         .form-link-btn {
             display: inline-block;
-            margin-top: 25px;
+            margin-top: 15px;
             padding: 14px 30px;
             background-color: #ffffff !important;
             color: #000000 !important;
             text-decoration: none;
             font-weight: bold;
             text-transform: uppercase;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             letter-spacing: 1px;
-            border-radius: 0px; /* Sharp edges for professional look */
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 0px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
             transition: all 0.3s ease;
+            position: relative;
+            z-index: 5; /* Cutout ke upar click maintain rakhne ke liye */
         }
         
-        /* Hover state code for unique interaction */
         .form-link-btn:hover {
             background-color: #000000 !important;
             color: #ffffff !important;
-            transform: translateY(-2px);
+        }
+
+        /* Grid Layout Content Area */
+        .main-content {
+            padding: 40px 8%;
+        }
+
+        .category-section {
+            margin-bottom: 40px;
+        }
+
+        .category-title {
+            font-size: 1.3rem;
+            color: #000000;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Reference red arrow icon helper before heading */
+        .category-title::before {
+            content: '▲';
+            color: #8B262A;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            transform: rotate(90deg);
+            display: inline-block;
+        }
+
+        .clubs-grid {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: transform;
+        }
+
+        .grid-column {
+            width: 15%;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .club-logo-wrapper img {
+            height: 65px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .club-info p {
+            margin: 2px 0;
+            font-size: 0.75rem;
+        }
+
+        .lorem-red {
+            color: #8B262A;
+        }
+
+        .lorem-bold {
+            font-weight: bold;
+            color: #333333;
+        }
+
+        /* Footer banner layout with exact top-right cut */
+        .footer-banner {
+            background-color: #8B262A;
+            color: #ffffff;
+            padding: 60px 8%;
+            position: relative;
+            margin-top: 50px;
+        }
+
+        /* Targetting ONLY the Top-Right Corner Cut exactly like image 2 */
+        .footer-banner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 70px 70px 0;
+            border-color: transparent #ffffff transparent transparent;
+        }
+
+        .footer-banner h2 {
+            font-size: 1.8rem;
+            font-weight: 900;
+            line-height: 1.4;
+            max-width: 600px;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Mobile Layout View Alignment responsive setup */
+        @media (max-width: 768px) {
+            .clubs-grid {
+                justify-content: center;
+            }
+            .grid-column {
+                width: 28%;
+            }
+            .header-banner h1 {
+                font-size: 2.2rem;
+            }
+            .footer-banner h2 {
+                font-size: 1.3rem;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header Block with Bottom Right Angle Cut -->
     <header class="header-banner">
         <div class="logo-container">
-            <img src="logo.png" alt="Logo" class="main-avatar">
+            <img src="logo.png" alt="Red Card Logo" class="main-avatar">
         </div>
         <h1>Red Card 2018</h1>
         <h2>China Digital Football Awards</h2>
         <p>The Red Card is globally recognised as the leading annual report to assess the most influential European football clubs, leagues and players online in China. Now in its 7th year, Red Card 2018 has been reimagined to include 5 additional awards to recognise the many areas of digital performance in China, thereby taking the Red Card report to a whole new level. Due to the nature and variety of these new categories, the winners will be chosen by a panel of 6 industry experts, rather than by the traditional metrics used to assess the three headline awards.</p>
         <p>This report aims to educate teams and organisations on how to improve their China digital strategy, what today's Chinese fan wants and what works online in China.</p>
         
-        <!-- Upgraded Unique Button Link -->
+        <!-- Premium Button Link -->
         <a href="submission.html" class="form-link-btn">Go to Submission Form →</a>
     </header>
 
+    <!-- Football Clubs Dynamic Row Grid Showcase -->
     <main class="main-content">
         <!-- Row 1 -->
         <section class="category-section">
@@ -130,6 +304,7 @@
         </section>
     </main>
 
+    <!-- Footer Block with Top Right Angle Cut ONLY -->
     <footer class="footer-banner">
         <h2>Red Card 2019 Winners and Report to be launched on 24th January 2019.</h2>
     </footer>
