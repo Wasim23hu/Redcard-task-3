@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="style.css">
     <style>
         /* Base Reset */
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -82,13 +86,16 @@
             color: #ffffff !important;
         }
 
-        /* Grid Content Area */
+        /* Grid Content Area - Perfectly Centered & Balanced Padding */
         .main-content {
-            padding: 40px 8%;
+            padding: 50px 8%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .category-section {
             margin-bottom: 40px;
+            width: 100%;
         }
 
         /* Clean Triangle Arrow */
@@ -113,21 +120,23 @@
             margin-right: 12px;
         }
 
+        /* Equal Spacing Fix for Left and Right */
         .clubs-grid {
             display: flex;
             flex-direction: row;
-            flex-wrap: wrap;
-            gap: 30px;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            gap: 15px;
         }
 
         .grid-column {
-            width: 15%;
-            min-width: 120px;
+            flex: 1;
             text-align: center;
         }
 
         .club-logo-wrapper img {
-            height: 65px;
+            height: 60px;
             object-fit: contain;
             margin-bottom: 10px;
         }
@@ -146,14 +155,13 @@
             color: #333333;
         }
 
-        /* 2. Footer Banner - Bottom-Right Cut (Yellow Arrow ke mutabiq fixed) */
+        /* Footer Banner */
         .footer-banner {
             background-color: #8B262A !important;
             color: #ffffff;
             padding: 60px 8% 100px 8% !important;
             margin-top: 50px;
             position: relative;
-            /* Is line se footer ka cut bilkul header ki tarah right-bottom ho gaya hai */
             clip-path: polygon(0 0, 100% 0, 100% calc(100% - 80px), calc(100% - 80px) 100%, 0 100%) !important;
         }
 
@@ -173,10 +181,12 @@
 
         @media (max-width: 768px) {
             .clubs-grid {
+                flex-wrap: wrap;
                 justify-content: center;
             }
             .grid-column {
-                width: 28%;
+                flex: 0 0 30%;
+                margin-bottom: 20px;
             }
             .header-banner h1 {
                 font-size: 2.2rem;
@@ -192,7 +202,7 @@
     <!-- Header Block -->
     <header class="header-banner">
         <div class="logo-container">
-            <img src="Images/logo.png" alt="Red Card Logo" class="main-avatar">
+            <img src="logo.png" alt="Red Card Logo" class="main-avatar">
         </div>
         <h1>Red Card 2018</h1>
         <h2>China Digital Football Awards</h2>
@@ -208,11 +218,11 @@
         <section class="category-section">
             <h3 class="category-title">Best Clubs</h3>
             <div class="clubs-grid">
-                <div class="grid-column"><div class="club-logo-wrapper"><img src="Images/1.png" alt="BVB"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
-                <div class="grid-column"><div class="club-logo-wrapper"><img src="Images/2.png" alt="Bundesliga"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
-                <div class="grid-column"><div class="club-logo-wrapper"><img src="Images/3.png" alt="Chelsea"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
-                <div class="grid-column"><div class="club-logo-wrapper"><img src="Images/4.png" alt="PSG"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
-                <div class="grid-column"><div class="club-logo-wrapper"><img src="Images/5.png" alt="Arsenal"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
+                <div class="grid-column"><div class="club-logo-wrapper"><img src="1.png" alt="BVB"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
+                <div class="grid-column"><div class="club-logo-wrapper"><img src="2.png" alt="Bundesliga"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
+                <div class="grid-column"><div class="club-logo-wrapper"><img src="3.png" alt="Chelsea"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
+                <div class="grid-column"><div class="club-logo-wrapper"><img src="4.png" alt="PSG"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
+                <div class="grid-column"><div class="club-logo-wrapper"><img src="5.png" alt="Arsenal"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
             </div>
         </section>
 
@@ -220,11 +230,11 @@
         <section class="category-section">
             <h3 class="category-title">Best Clubs</h3>
             <div class="clubs-grid">
-                <div class="grid-column"><div class="club-logo-wrapper"><img src="Images/1.png" alt="BVB"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
-                <div class="grid-column"><div class="club-logo-wrapper"><img src="Images/2.png" alt="Bundesliga"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
-                <div class="grid-column"><div class="club-logo-wrapper"><img src="Images/3.png" alt="Chelsea"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
-                <div class="grid-column"><div class="club-logo-wrapper"><img src="Images/4.png" alt="PSG"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
-                <div class="grid-column"><div class="club-logo-wrapper"><img src="Images/5.png" alt="Arsenal"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
+                <div class="grid-column"><div class="club-logo-wrapper"><img src="1.png" alt="BVB"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
+                <div class="grid-column"><div class="club-logo-wrapper"><img src="2.png" alt="Bundesliga"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
+                <div class="grid-column"><div class="club-logo-wrapper"><img src="3.png" alt="Chelsea"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
+                <div class="grid-column"><div class="club-logo-wrapper"><img src="4.png" alt="PSG"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
+                <div class="grid-column"><div class="club-logo-wrapper"><img src="5.png" alt="Arsenal"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
             </div>
         </section>
 
@@ -232,11 +242,11 @@
         <section class="category-section">
             <h3 class="category-title">Best Clubs</h3>
             <div class="clubs-grid">
-                <div class="grid-column"><div class="club-logo-wrapper"><img src="Images/1.png" alt="BVB"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
-                <div class="grid-column"><div class="club-logo-wrapper"><img src="Images/2.png" alt="Bundesliga"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
-                <div class="grid-column"><div class="club-logo-wrapper"><img src="Images/3.png" alt="Chelsea"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
-                <div class="grid-column"><div class="club-logo-wrapper"><img src="Images/4.png" alt="PSG"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
-                <div class="grid-column"><div class="club-logo-wrapper"><img src="Images/5.png" alt="Arsenal"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
+                <div class="grid-column"><div class="club-logo-wrapper"><img src="1.png" alt="BVB"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
+                <div class="grid-column"><div class="club-logo-wrapper"><img src="2.png" alt="Bundesliga"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
+                <div class="grid-column"><div class="club-logo-wrapper"><img src="3.png" alt="Chelsea"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
+                <div class="grid-column"><div class="club-logo-wrapper"><img src="4.png" alt="PSG"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
+                <div class="grid-column"><div class="club-logo-wrapper"><img src="5.png" alt="Arsenal"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
             </div>
         </section>
 
@@ -244,11 +254,11 @@
         <section class="category-section">
             <h3 class="category-title">Best Clubs</h3>
             <div class="clubs-grid">
-                <div class="grid-column"><div class="club-logo-wrapper"><img src="Images/1.png" alt="BVB"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
-                <div class="grid-column"><div class="club-logo-wrapper"><img src="Images/2.png" alt="Bundesliga"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
-                <div class="grid-column"><div class="club-logo-wrapper"><img src="Images/3.png" alt="Chelsea"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
-                <div class="grid-column"><div class="club-logo-wrapper"><img src="Images/4.png" alt="PSG"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
-                <div class="grid-column"><div class="club-logo-wrapper"><img src="Images/5.png" alt="Arsenal"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
+                <div class="grid-column"><div class="club-logo-wrapper"><img src="1.png" alt="BVB"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
+                <div class="grid-column"><div class="club-logo-wrapper"><img src="2.png" alt="Bundesliga"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
+                <div class="grid-column"><div class="club-logo-wrapper"><img src="3.png" alt="Chelsea"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
+                <div class="grid-column"><div class="club-logo-wrapper"><img src="4.png" alt="PSG"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
+                <div class="grid-column"><div class="club-logo-wrapper"><img src="5.png" alt="Arsenal"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
             </div>
         </section>
 
@@ -256,11 +266,11 @@
         <section class="category-section">
             <h3 class="category-title">Best Clubs</h3>
             <div class="clubs-grid">
-                <div class="grid-column"><div class="club-logo-wrapper"><img src="Images/1.png" alt="BVB"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
-                <div class="grid-column"><div class="club-logo-wrapper"><img src="Images/2.png" alt="Bundesliga"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
-                <div class="grid-column"><div class="club-logo-wrapper"><img src="Images/3.png" alt="Chelsea"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
-                <div class="grid-column"><div class="club-logo-wrapper"><img src="Images/4.png" alt="PSG"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
-                <div class="grid-column"><div class="club-logo-wrapper"><img src="Images/5.png" alt="Arsenal"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
+                <div class="grid-column"><div class="club-logo-wrapper"><img src="1.png" alt="BVB"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
+                <div class="grid-column"><div class="club-logo-wrapper"><img src="2.png" alt="Bundesliga"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
+                <div class="grid-column"><div class="club-logo-wrapper"><img src="3.png" alt="Chelsea"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
+                <div class="grid-column"><div class="club-logo-wrapper"><img src="4.png" alt="PSG"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
+                <div class="grid-column"><div class="club-logo-wrapper"><img src="5.png" alt="Arsenal"></div><div class="club-info"><p class="lorem-red">Lorem ipsum</p><p class="lorem-bold">Lorem</p></div></div>
             </div>
         </section>
     </main>
