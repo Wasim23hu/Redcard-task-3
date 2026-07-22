@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="style.css">
     
     <style>
-        /* Alignment and Layout styles exactly as your reference image */
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -17,20 +20,22 @@
         }
 
         .top-brand-bar {
-            padding: 20px 40px;
+            padding: 25px 8%;
             background-color: #ffffff;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .brand-logo {
-            height: 60px;
+            height: 50px;
             display: block;
+            object-fit: contain;
         }
 
         .submission-container {
             background-color: #8B262A; 
             min-height: calc(100vh - 100px);
             padding: 60px 8%;
-            box-sizing: border-box;
             position: relative;
             overflow: hidden;
         }
@@ -52,7 +57,7 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: flex-start;
-            gap: 10%;
+            gap: 8%;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -60,7 +65,7 @@
         .left-content-cell {
             flex: 1;
             color: #ffffff;
-            margin-top: 40px;
+            margin-top: 20px;
         }
 
         .left-content-cell h1 {
@@ -100,7 +105,6 @@
         .right-form-cell .form-group input, 
         .right-form-cell .form-group textarea {
             width: 100%;
-            box-sizing: border-box;
             background-color: transparent !important;
             border: 1px solid rgba(255, 255, 255, 0.8) !important;
             color: #ffffff !important;
@@ -150,7 +154,6 @@
             height: 16px;
         }
 
-        /* Solid white action button styling */
         .submit-status-bar {
             background-color: #ffffff !important;
             color: #000000 !important;
@@ -184,7 +187,8 @@
 <body>
 
     <div class="top-brand-bar">
-        <img src="logo.png" alt="Brand Logo" class="brand-logo">
+        <!-- Exact image path updated to logo.png -->
+        <img src="logo.png" alt="Red Card Logo" class="brand-logo">
     </div>
 
     <div class="submission-container">
@@ -197,7 +201,7 @@
                 <p class="deadline-text">Applications will close on the 15th December 2017</p>
             </div>
 
-            <!-- Right Side Form Fields Section (ID added) -->
+            <!-- Right Side Form Fields Section -->
             <form class="right-form-cell" id="submissionForm">
                 <div class="form-group">
                     <input type="text" class="input-field" placeholder="Name" required>
@@ -252,23 +256,18 @@
                     <textarea class="textarea-field" placeholder="Description & Results (max. 150 words)"></textarea>
                 </div>
 
-                <!-- type="submit" aur ID add kar di hai taake validation chal sake -->
                 <button type="submit" class="submit-status-bar" id="submitBtn">Submit Application</button>
             </form>
 
         </div>
     </div>
 
-    <!-- JavaScript code jo alignment ko chhede bina functional toggle handle karega -->
     <script>
         document.getElementById('submissionForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Page reload hone se rokne ke liye
-            
+            event.preventDefault();
             var btn = document.getElementById('submitBtn');
-            
-            // Submit karne par text instant change ho jayega
             btn.innerHTML = "✓ Submission Successful";
-            btn.disabled = true; // Duplicate entries block karne ke liye
+            btn.disabled = true;
         });
     </script>
 
