@@ -72,7 +72,11 @@
                     <textarea class="textarea-field" placeholder="Description & Results (max. 150 words)"></textarea>
                 </div>
 
-                <button type="submit" class="submit-status-bar" id="submitBtn">Submit Application</button>
+                <div class="submit-btn-wrapper">
+                    <button type="submit" class="submit-status-bar" id="submitBtn">
+                        <span>&#10003;</span> Submission Successful
+                    </button>
+                </div>
             </form>
 
         </div>
@@ -82,8 +86,7 @@
         document.getElementById('submissionForm').addEventListener('submit', function(event) {
             event.preventDefault();
             var btn = document.getElementById('submitBtn');
-            btn.innerHTML = "✓ Submission Successful";
-            btn.disabled = true;
+            btn.style.opacity = "0.8";
         });
     </script>
 
