@@ -18,28 +18,27 @@
             min-height: 100vh;
         }
 
-        /* Top Bar with Center Logo */
+        /* Top Bar: Logo exact top-left corner par set karne ke liye */
         .header-logo-bar {
-            padding: 20px 0 15px 0;
+            padding: 20px 0 15px 30px; /* Corner alignment */
             background-color: #ffffff;
-            display: flex;
-            justify-content: center; /* Center aligned logo */
-            align-items: center;
+            width: 100%;
+            display: block;
         }
 
         .header-logo-bar img {
-            height: 55px;
+            height: 65px;
             width: auto;
             display: block;
         }
 
-        /* Red Main Container */
+        /* Red Section */
         .red-section {
             background-color: #8B262A;
-            padding: 50px 0 90px 0;
+            padding: 60px 0 110px 0;
             width: 100%;
             /* Bottom-right angled cut */
-            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 70px), calc(100% - 70px) 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 90px), calc(100% - 90px) 100%, 0 100%);
         }
 
         .wrapper {
@@ -55,43 +54,38 @@
             gap: 50px;
         }
 
-        /* Left Side Text Block (Center Aligned as requested by Sir) */
+        /* Left Side Text Block */
         .left-col {
             flex: 1;
             padding-top: 30px;
-            text-align: center; /* Text center mein karne ke liye */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
         .left-col h1 {
-            font-size: 3.8rem;
+            font-size: 4.2rem;
             font-weight: 900;
             margin-bottom: 20px;
             line-height: 1;
-            letter-spacing: 0.5px;
+            letter-spacing: -1px;
             color: #ffffff;
-            text-transform: uppercase;
         }
 
         .left-col p {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             line-height: 1.5;
             color: rgba(255, 255, 255, 0.85);
-            max-width: 380px;
+            max-width: 360px;
             margin-bottom: 25px;
         }
 
         .left-col .deadline {
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 900;
             color: #000000;
             line-height: 1.3;
             max-width: 320px;
         }
 
-        /* Right Side Form Block */
+        /* Right Side Form */
         .right-col {
             flex: 1;
             max-width: 440px;
@@ -101,7 +95,7 @@
             width: 100%;
             background: transparent;
             border: 1px solid rgba(255, 255, 255, 0.65);
-            padding: 8px 12px;
+            padding: 9px 12px;
             color: #ffffff;
             font-size: 0.82rem;
             margin-bottom: 10px;
@@ -113,7 +107,7 @@
         }
 
         .award-title {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 900;
             color: #000000;
             margin-top: 20px;
@@ -173,19 +167,18 @@
             font-size: 1rem;
             font-weight: 600;
             border: none;
-            cursor: pointer;
             display: inline-flex;
             align-items: center;
             gap: 8px;
+            cursor: pointer;
         }
 
         @media (max-width: 768px) {
             .content-grid {
                 flex-direction: column;
-                align-items: center;
             }
-            .left-col {
-                padding-top: 0;
+            .header-logo-bar {
+                padding-left: 20px;
             }
             .btn-holder {
                 justify-content: center;
@@ -195,23 +188,23 @@
 </head>
 <body>
 
-    <!-- Logo Section (Centered) -->
+    <!-- Top Corner Logo -->
     <div class="header-logo-bar">
         <img src="Images/logo.png" alt="Logo">
     </div>
 
-    <!-- Main Red Container -->
+    <!-- Main Section -->
     <div class="red-section">
         <div class="wrapper content-grid">
             
-            <!-- Left Info (Centered Text) -->
+            <!-- Left Info Block -->
             <div class="left-col">
-                <h1>SUBMISSION</h1>
+                <h1>Submission</h1>
                 <p>All details of submissions will be kept strictly private and confidential by Mailman and will not be used for any purpose other than judging Red Card 2018 winners.</p>
                 <div class="deadline">Applications will close on the 15th December 2017</div>
             </div>
 
-            <!-- Right Form -->
+            <!-- Right Form Block -->
             <form class="right-col">
                 <input type="text" class="input-box" placeholder="Name">
                 <input type="email" class="input-box" placeholder="Email Address">
