@@ -19,46 +19,46 @@
             overflow-x: hidden;
         }
 
-        /* 1. TOP WHITE BAR (Logo at extreme top-left) */
+        /* 1. LOGO AT EXTREME TOP-LEFT CORNER */
         .header-logo-bar {
             width: 100%;
-            padding: 25px 0 20px 45px; /* Top, Right, Bottom, Left Padding */
+            padding: 15px 0 15px 25px; /* Kam padding taake logo bilkul corner mein rahe */
             background-color: #ffffff;
         }
 
         .header-logo-bar img {
-            height: 70px;
+            height: 65px;
             width: auto;
             display: block;
         }
 
-        /* 2. MAIN RED SECTION (Full width with angled cut at bottom-right) */
+        /* 2. MAIN RED CONTAINER */
         .red-section {
             background-color: #8C232A;
             width: 100%;
-            padding: 60px 80px 100px 80px; /* Inside spacing */
+            padding: 70px 60px 90px 60px;
             color: #ffffff;
             clip-path: polygon(0 0, 100% 0, 100% calc(100% - 70px), calc(100% - 70px) 100%, 0 100%);
         }
 
         .content-grid {
-            max-width: 1200px;
+            max-width: 1150px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            gap: 80px;
+            gap: 60px;
         }
 
-        /* 3. LEFT COLUMN (Strictly Left Aligned) */
+        /* 3. LEFT COLUMN (SUBMISSION TEXT NEECHE PUSH KIYA GAYA HAI) */
         .left-col {
             flex: 1;
-            padding-top: 30px;
-            text-align: left; /* Purely Left Aligned */
+            padding-top: 130px; /* Text ko niche karne ke liye top padding barha di */
+            text-align: left;
         }
 
         .left-col h1 {
-            font-size: 4rem;
+            font-size: 4.2rem;
             font-weight: 900;
             margin-bottom: 25px;
             line-height: 1;
@@ -85,7 +85,7 @@
         /* 4. RIGHT FORM COLUMN */
         .right-col {
             flex: 1;
-            max-width: 480px;
+            max-width: 460px;
         }
 
         .input-box {
@@ -170,11 +170,14 @@
         }
 
         @media (max-width: 850px) {
+            .left-col {
+                padding-top: 20px; /* Mobile screen par margin normal kar diya */
+            }
             .red-section {
-                padding: 40px 25px;
+                padding: 40px 20px;
             }
             .header-logo-bar {
-                padding-left: 20px;
+                padding-left: 15px;
             }
             .content-grid {
                 flex-direction: column;
@@ -188,16 +191,16 @@
 </head>
 <body>
 
-    <!-- TOP WHITE HEADER (LOGO AT EXTREME TOP-LEFT) -->
+    <!-- LOGO AT EXTREME TOP LEFT CORNER -->
     <div class="header-logo-bar">
         <img src="Images/logo.png" alt="Logo">
     </div>
 
-    <!-- MAIN RED CONTAINER -->
+    <!-- MAIN RED SECTION -->
     <div class="red-section">
         <div class="content-grid">
             
-            <!-- LEFT COLUMN: SUBMISSION TEXT (LEFT-ALIGNED) -->
+            <!-- LEFT COLUMN: SUBMISSION TEXT (PUSHED DOWN) -->
             <div class="left-col">
                 <h1>Submission</h1>
                 <p>All details of submissions will be kept strictly private and confidential by Mailman and will not be used for any purpose other than judging Red Card 2018 winners.</p>
