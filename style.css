@@ -173,9 +173,6 @@ body {
 .top-brand-bar {
     padding: 25px 0;
     background-color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .brand-logo {
@@ -183,7 +180,7 @@ body {
     width: auto;
     object-fit: contain;
     display: block;
-    margin: 0 auto;
+    margin-left: 0;
 }
 
 .submission-container {
