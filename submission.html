@@ -4,204 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Submission - Red Card Awards</title>
-    <!-- External CSS Link -->
     <link rel="stylesheet" href="style.css">
-    
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff;
-            font-family: sans-serif;
-        }
-
-        .top-brand-bar {
-            padding: 25px 8%;
-            background-color: #ffffff;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .brand-logo {
-            height: 50px;
-            display: block;
-            object-fit: contain;
-        }
-
-        .submission-container {
-            background-color: #8B262A; 
-            min-height: calc(100vh - 100px);
-            padding: 60px 8%;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .submission-container::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 0 0 60px 60px;
-            border-color: transparent transparent #ffffff transparent;
-        }
-
-        .split-layout-row {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 8%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .left-content-cell {
-            flex: 1;
-            color: #ffffff;
-            margin-top: 20px;
-        }
-
-        .left-content-cell h1 {
-            font-size: 3.5rem;
-            font-weight: 900;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
-        }
-
-        .left-content-cell p {
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 450px;
-        }
-
-        .left-content-cell .deadline-text {
-            font-weight: bold;
-            color: #ffffff;
-            margin-top: 30px;
-        }
-
-        .right-form-cell {
-            flex: 1.2;
-            width: 100%;
-            max-width: 550px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-            width: 100%;
-        }
-
-        .right-form-cell .form-group input, 
-        .right-form-cell .form-group textarea {
-            width: 100%;
-            background-color: transparent !important;
-            border: 1px solid rgba(255, 255, 255, 0.8) !important;
-            color: #ffffff !important;
-            padding: 12px 15px;
-            font-size: 0.95rem;
-            border-radius: 0px;
-        }
-
-        .right-form-cell .form-group textarea {
-            height: 80px;
-            resize: none;
-        }
-
-        .right-form-cell .form-group input::placeholder, 
-        .right-form-cell .form-group textarea::placeholder {
-            color: rgba(255, 255, 255, 0.7) !important;
-        }
-
-        .award-heading {
-            color: #ffffff;
-            font-size: 1.4rem;
-            margin: 25px 0 5px 0;
-            font-weight: bold;
-        }
-
-        .award-subtext {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.8rem;
-            margin-bottom: 15px;
-        }
-
-        .checkbox-container {
-            color: #ffffff !important;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            margin-top: 20px;
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-            cursor: pointer;
-        }
-
-        .checkbox-container input {
-            margin-right: 10px;
-            accent-color: #ffffff;
-            width: 16px;
-            height: 16px;
-        }
-
-        .submit-status-bar {
-            background-color: #ffffff !important;
-            color: #000000 !important;
-            font-weight: bold !important;
-            border: none !important;
-            padding: 16px 0 !important;
-            font-size: 1.05rem !important;
-            cursor: pointer;
-            width: 100%;
-            display: block;
-            text-align: center;
-            margin-top: 30px;
-            letter-spacing: 0.5px;
-            transition: background-color 0.2s ease;
-        }
-
-        @media (max-width: 768px) {
-            .split-layout-row {
-                flex-direction: column;
-                gap: 40px;
-            }
-            .left-content-cell {
-                margin-top: 10px;
-            }
-            .left-content-cell h1 {
-                font-size: 2.8rem;
-            }
-        }
-    </style>
 </head>
 <body>
 
     <div class="top-brand-bar">
-        <!-- Exact Image Folder Path -->
-        <img src="Images/logo.png" alt="Red Card Logo" class="brand-logo">
+        <div class="site-container">
+            <img src="Images/logo.png" alt="Red Card Logo" class="brand-logo">
+        </div>
     </div>
 
     <div class="submission-container">
-        <div class="split-layout-row">
+        <div class="split-layout-row site-container">
             
-            <!-- Left Side Details Section -->
             <div class="left-content-cell">
                 <h1>Submission</h1>
                 <p>All details of submissions will be kept strictly private and confidential by Mailman and will not be used for any purpose other than judging Red Card 2018 winners.</p>
                 <p class="deadline-text">Applications will close on the 15th December 2017</p>
             </div>
 
-            <!-- Right Side Form Fields Section -->
             <form class="right-form-cell" id="submissionForm">
                 <div class="form-group">
                     <input type="text" class="input-field" placeholder="Name" required>
@@ -216,7 +37,6 @@
                 <h3 class="award-heading">Which Award</h3>
                 <p class="award-subtext">(Please tick and provide details for all of the awards you would like to be nominated for)</p>
 
-                <!-- 1. Best Livestream -->
                 <label class="checkbox-container">
                     <input type="checkbox" checked> Best Livestream
                 </label>
@@ -224,7 +44,6 @@
                     <textarea class="textarea-field" placeholder="Description & Results (max. 150 words)"></textarea>
                 </div>
 
-                <!-- 2. Best Tour Campaign -->
                 <label class="checkbox-container">
                     <input type="checkbox"> Best Tour Campaign
                 </label>
@@ -232,7 +51,6 @@
                     <textarea class="textarea-field" placeholder="Description & Results (max. 150 words)"></textarea>
                 </div>
 
-                <!-- 3. Best Sponsor Activation -->
                 <label class="checkbox-container">
                     <input type="checkbox"> Best Sponsor Activation
                 </label>
@@ -240,7 +58,6 @@
                     <textarea class="textarea-field" placeholder="Description & Results (max. 150 words)"></textarea>
                 </div>
 
-                <!-- 4. Best Use of Technology -->
                 <label class="checkbox-container">
                     <input type="checkbox"> Best Use of Technology
                 </label>
@@ -248,7 +65,6 @@
                     <textarea class="textarea-field" placeholder="Description & Results (max. 150 words)"></textarea>
                 </div>
 
-                <!-- 5. Best Online Campaign -->
                 <label class="checkbox-container">
                     <input type="checkbox"> Best Online Campaign
                 </label>
