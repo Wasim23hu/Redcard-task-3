@@ -13,38 +13,46 @@
         }
 
         body {
-            background-color: #ffffff;
-            color: #ffffff;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             min-height: 100vh;
+            padding: 20px;
         }
 
-        /* Top Bar: Logo exact top-left corner par set karne ke liye */
-        .header-logo-bar {
-            padding: 20px 0 15px 30px; /* Corner alignment */
-            background-color: #ffffff;
+        /* Outer Box Container */
+        .card-container {
             width: 100%;
-            display: block;
+            max-width: 1100px;
+            background-color: #ffffff;
+            border-top-left-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* CHANGE 1: LOGO AT LEFT END */
+        .header-logo-bar {
+            padding: 15px 0 15px 25px; /* Left padding se logo extreme left end par aagaya */
+            background-color: #ffffff;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
         }
 
         .header-logo-bar img {
-            height: 65px;
+            height: 55px;
             width: auto;
             display: block;
         }
 
-        /* Red Section */
+        /* Red Main Section */
         .red-section {
             background-color: #8B262A;
-            padding: 60px 0 110px 0;
-            width: 100%;
-            /* Bottom-right angled cut */
-            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 90px), calc(100% - 90px) 100%, 0 100%);
-        }
-
-        .wrapper {
-            max-width: 1050px;
-            width: 88%;
-            margin: 0 auto;
+            padding: 50px 60px 80px 60px;
+            color: #ffffff;
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 70px), calc(100% - 70px) 100%, 0 100%);
         }
 
         .content-grid {
@@ -54,38 +62,43 @@
             gap: 50px;
         }
 
-        /* Left Side Text Block */
+        /* CHANGE 2: SUBMISSION TEXT CENTERED */
         .left-col {
             flex: 1;
-            padding-top: 30px;
+            padding-top: 20px;
+            text-align: center; /* Left column ka sara text center align kar diya */
         }
 
         .left-col h1 {
-            font-size: 4.2rem;
+            font-size: 3.8rem;
             font-weight: 900;
             margin-bottom: 20px;
             line-height: 1;
-            letter-spacing: -1px;
+            letter-spacing: -0.5px;
             color: #ffffff;
+            text-align: center;
         }
 
         .left-col p {
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             line-height: 1.5;
             color: rgba(255, 255, 255, 0.85);
-            max-width: 360px;
-            margin-bottom: 25px;
+            max-width: 380px;
+            margin: 0 auto 25px auto; /* Auto margin se paragraph center ho gaya */
+            text-align: center;
         }
 
         .left-col .deadline {
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             font-weight: 900;
             color: #000000;
             line-height: 1.3;
-            max-width: 320px;
+            max-width: 300px;
+            margin: 0 auto; /* Center alignment */
+            text-align: center;
         }
 
-        /* Right Side Form */
+        /* Right Side Form Section */
         .right-col {
             flex: 1;
             max-width: 440px;
@@ -94,7 +107,7 @@
         .input-box {
             width: 100%;
             background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.5);
             padding: 9px 12px;
             color: #ffffff;
             font-size: 0.82rem;
@@ -107,7 +120,7 @@
         }
 
         .award-title {
-            font-size: 1.3rem;
+            font-size: 1.15rem;
             font-weight: 900;
             color: #000000;
             margin-top: 20px;
@@ -117,7 +130,7 @@
         .award-sub {
             font-size: 0.65rem;
             color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
 
         .check-item {
@@ -139,9 +152,9 @@
 
         .textarea-box {
             width: 100%;
-            height: 55px;
+            height: 52px;
             background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.5);
             padding: 8px 12px;
             color: #ffffff;
             font-size: 0.8rem;
@@ -153,7 +166,6 @@
             color: rgba(255, 255, 255, 0.75);
         }
 
-        /* Submit Button */
         .btn-holder {
             display: flex;
             justify-content: flex-end;
@@ -163,9 +175,9 @@
         .success-btn {
             background-color: #ffffff;
             color: #000000;
-            padding: 10px 24px;
-            font-size: 1rem;
-            font-weight: 600;
+            padding: 10px 22px;
+            font-size: 0.95rem;
+            font-weight: 700;
             border: none;
             display: inline-flex;
             align-items: center;
@@ -173,68 +185,67 @@
             cursor: pointer;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 800px) {
             .content-grid {
                 flex-direction: column;
             }
-            .header-logo-bar {
-                padding-left: 20px;
-            }
-            .btn-holder {
-                justify-content: center;
+            .red-section {
+                padding: 40px 25px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Corner Logo -->
-    <div class="header-logo-bar">
-        <img src="Images/logo.png" alt="Logo">
-    </div>
+    <div class="card-container">
+        <!-- LOGO AT LEFT END -->
+        <div class="header-logo-bar">
+            <img src="Images/logo.png" alt="Logo">
+        </div>
 
-    <!-- Main Section -->
-    <div class="red-section">
-        <div class="wrapper content-grid">
-            
-            <!-- Left Info Block -->
-            <div class="left-col">
-                <h1>Submission</h1>
-                <p>All details of submissions will be kept strictly private and confidential by Mailman and will not be used for any purpose other than judging Red Card 2018 winners.</p>
-                <div class="deadline">Applications will close on the 15th December 2017</div>
-            </div>
-
-            <!-- Right Form Block -->
-            <form class="right-col">
-                <input type="text" class="input-box" placeholder="Name">
-                <input type="email" class="input-box" placeholder="Email Address">
-                <input type="text" class="input-box" placeholder="Organisation">
-
-                <div class="award-title">Which Award</div>
-                <div class="award-sub">(Please tick and provide details for all of the awards you would like to be nominated for)</div>
-
-                <label class="check-item"><input type="checkbox" checked> Best Livestream</label>
-                <textarea class="textarea-box" placeholder="Description & Results (max. 150 words)"></textarea>
-
-                <label class="check-item"><input type="checkbox"> Best Tour Campaign</label>
-                <textarea class="textarea-box" placeholder="Description & Results (max. 150 words)"></textarea>
-
-                <label class="check-item"><input type="checkbox"> Best Sponsor Activation</label>
-                <textarea class="textarea-box" placeholder="Description & Results (max. 150 words)"></textarea>
-
-                <label class="check-item"><input type="checkbox"> Best Use of Technology</label>
-                <textarea class="textarea-box" placeholder="Description & Results (max. 150 words)"></textarea>
-
-                <label class="check-item"><input type="checkbox"> Best Online Campaign</label>
-                <textarea class="textarea-box" placeholder="Description & Results (max. 150 words)"></textarea>
-
-                <div class="btn-holder">
-                    <button type="button" class="success-btn">
-                        <span>&#10003;</span> Submission Successful
-                    </button>
+        <!-- RED SECTION -->
+        <div class="red-section">
+            <div class="content-grid">
+                
+                <!-- SUBMISSION TEXT AREA (CENTERED) -->
+                <div class="left-col">
+                    <h1>Submission</h1>
+                    <p>All details of submissions will be kept strictly private and confidential by Mailman and will not be used for any purpose other than judging Red Card 2018 winners.</p>
+                    <div class="deadline">Applications will close on the 15th December 2017</div>
                 </div>
-            </form>
 
+                <!-- RIGHT FORM AREA -->
+                <form class="right-col">
+                    <input type="text" class="input-box" placeholder="Name">
+                    <input type="email" class="input-box" placeholder="Email Address">
+                    <input type="text" class="input-box" placeholder="Organisation">
+
+                    <div class="award-title">Which Award</div>
+                    <div class="award-sub">(Please tick and provide details for all of the awards you would like to be nominated for)</div>
+
+                    <label class="check-item"><input type="checkbox" checked> Best Livestream</label>
+                    <textarea class="textarea-box" placeholder="Description & Results (max. 150 words)"></textarea>
+
+                    <label class="check-item"><input type="checkbox"> Best Tour Campaign</label>
+                    <textarea class="textarea-box" placeholder="Description & Results (max. 150 words)"></textarea>
+
+                    <label class="check-item"><input type="checkbox"> Best Sponsor Activation</label>
+                    <textarea class="textarea-box" placeholder="Description & Results (max. 150 words)"></textarea>
+
+                    <label class="check-item"><input type="checkbox"> Best Use of Technology</label>
+                    <textarea class="textarea-box" placeholder="Description & Results (max. 150 words)"></textarea>
+
+                    <label class="check-item"><input type="checkbox"> Best Online Campaign</label>
+                    <textarea class="textarea-box" placeholder="Description & Results (max. 150 words)"></textarea>
+
+                    <div class="btn-holder">
+                        <button type="button" class="success-btn">
+                            <span>&#10003;</span> Submission Successful
+                        </button>
+                    </div>
+                </form>
+
+            </div>
         </div>
     </div>
 
