@@ -13,32 +13,26 @@
         }
 
         body {
-            background-color: #f2f2f2;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        /* Outer Box Container */
-        .card-container {
+            background-color: #8B262A;
             width: 100%;
-            max-width: 1100px;
-            background-color: #ffffff;
-            border-top-left-radius: 40px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        /* CHANGE 1: LOGO AT LEFT END */
+        /* 1. FULL PAGE CONTAINER */
+        .page-wrapper {
+            width: 100%;
+            background-color: #ffffff;
+        }
+
+        /* 2. LOGO AT TOP-LEFT CORNER */
         .header-logo-bar {
-            padding: 15px 0 15px 25px; /* Left padding se logo extreme left end par aagaya */
+            width: 100%;
+            padding: 20px 0 15px 50px; /* Left padding se logo top-left corner par set ho gaya */
             background-color: #ffffff;
             display: flex;
             justify-content: flex-start;
             align-items: center;
-            width: 100%;
         }
 
         .header-logo-bar img {
@@ -47,32 +41,38 @@
             display: block;
         }
 
-        /* Red Main Section */
+        /* 3. RED SECTION FULL WIDTH */
         .red-section {
             background-color: #8B262A;
-            padding: 50px 60px 80px 60px;
+            width: 100%;
+            padding: 50px 80px 80px 80px;
             color: #ffffff;
-            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 70px), calc(100% - 70px) 100%, 0 100%);
+            /* Bottom right angled cut */
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 60px), calc(100% - 60px) 100%, 0 100%);
         }
 
         .content-grid {
+            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            gap: 50px;
+            gap: 60px;
         }
 
-        /* CHANGE 2: SUBMISSION TEXT CENTERED */
+        /* 4. LEFT COLUMN - SUBMISSION TEXT CENTERED */
         .left-col {
             flex: 1;
-            padding-top: 20px;
-            text-align: center; /* Left column ka sara text center align kar diya */
+            padding-top: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Horizontally center */
+            text-align: center;   /* Text alignment center */
         }
 
         .left-col h1 {
             font-size: 3.8rem;
             font-weight: 900;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             line-height: 1;
             letter-spacing: -0.5px;
             color: #ffffff;
@@ -80,11 +80,11 @@
         }
 
         .left-col p {
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             line-height: 1.5;
             color: rgba(255, 255, 255, 0.85);
-            max-width: 380px;
-            margin: 0 auto 25px auto; /* Auto margin se paragraph center ho gaya */
+            max-width: 400px;
+            margin-bottom: 30px;
             text-align: center;
         }
 
@@ -93,25 +93,24 @@
             font-weight: 900;
             color: #000000;
             line-height: 1.3;
-            max-width: 300px;
-            margin: 0 auto; /* Center alignment */
+            max-width: 320px;
             text-align: center;
         }
 
-        /* Right Side Form Section */
+        /* RIGHT FORM COLUMN */
         .right-col {
             flex: 1;
-            max-width: 440px;
+            max-width: 500px;
         }
 
         .input-box {
             width: 100%;
             background: transparent;
             border: 1px solid rgba(255, 255, 255, 0.5);
-            padding: 9px 12px;
+            padding: 10px 14px;
             color: #ffffff;
-            font-size: 0.82rem;
-            margin-bottom: 10px;
+            font-size: 0.85rem;
+            margin-bottom: 12px;
             outline: none;
         }
 
@@ -123,12 +122,12 @@
             font-size: 1.15rem;
             font-weight: 900;
             color: #000000;
-            margin-top: 20px;
+            margin-top: 22px;
             margin-bottom: 3px;
         }
 
         .award-sub {
-            font-size: 0.65rem;
+            font-size: 0.68rem;
             color: rgba(255, 255, 255, 0.8);
             margin-bottom: 15px;
         }
@@ -136,9 +135,9 @@
         .check-item {
             display: flex;
             align-items: center;
-            margin-top: 12px;
-            margin-bottom: 5px;
-            font-size: 0.82rem;
+            margin-top: 14px;
+            margin-bottom: 6px;
+            font-size: 0.85rem;
             font-weight: 700;
             cursor: pointer;
         }
@@ -152,7 +151,7 @@
 
         .textarea-box {
             width: 100%;
-            height: 52px;
+            height: 55px;
             background: transparent;
             border: 1px solid rgba(255, 255, 255, 0.5);
             padding: 8px 12px;
@@ -169,13 +168,13 @@
         .btn-holder {
             display: flex;
             justify-content: flex-end;
-            margin-top: 20px;
+            margin-top: 25px;
         }
 
         .success-btn {
             background-color: #ffffff;
             color: #000000;
-            padding: 10px 22px;
+            padding: 10px 24px;
             font-size: 0.95rem;
             font-weight: 700;
             border: none;
@@ -185,25 +184,31 @@
             cursor: pointer;
         }
 
-        @media (max-width: 800px) {
+        @media (max-width: 850px) {
+            .red-section {
+                padding: 30px 20px;
+            }
+            .header-logo-bar {
+                padding-left: 20px;
+            }
             .content-grid {
                 flex-direction: column;
             }
-            .red-section {
-                padding: 40px 25px;
+            .right-col {
+                max-width: 100%;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="card-container">
-        <!-- LOGO AT LEFT END -->
+    <div class="page-wrapper">
+        <!-- LOGO AT TOP LEFT CORNER -->
         <div class="header-logo-bar">
             <img src="Images/logo.png" alt="Logo">
         </div>
 
-        <!-- RED SECTION -->
+        <!-- RED SECTION FULL PAGE -->
         <div class="red-section">
             <div class="content-grid">
                 
